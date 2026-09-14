@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <meta charset="utf-8">
 <title>Ensemble Coordonné GEO</title>
 <link rel="canonical" href="https://www.kiabi.com/conseils/mode-femme-pourquoi-craquer-pour-l-ensemble-coordonne">
@@ -44,18 +45,22 @@
   @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@600;700;800;900&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap');
 
   :root{
-    --navy:#040037;
-    --navy-soft:#12104f;
-    --blue:#006efb;
-    --yellow:#ffda00;
+    /* palette officielle Kiabi (tokens du design system kiabi.com) */
+    --navy:#040037;            /* petrol-blue-500 */
+    --navy-soft:#36335f;       /* petrol-blue-400 */
+    --blue:#006efb;            /* neon-blue-500, aplats et CTA */
+    --blue-link:#004eb2;       /* neon-blue-700, liens sur fond clair */
+    --blue-on-dark:#8abcfd;    /* neon-blue-200, liens sur fond sombre */
+    --yellow:#ffda00;          /* yellow-500 */
     --white:#ffffff;
     --paper:#f4f5fb;
-    --ink:#030032;
-    --ink-soft:#5c5a7d;
-    --line:#e4e4f0;
+    --ink:#040037;             /* petrol-blue-500 */
+    --ink-soft:#575479;        /* petrol-blue-300 */
+    --ink-on-dark:#d7d6e0;     /* texte secondaire sur fond sombre */
+    --line:#e6e6eb;            /* petrol-blue-50 */
 
-    --geo:#ff3868;
-    --geo-dark:#c40d40;
+    --geo:#d1004b;
+    --geo-dark:#a30039;
     --geo-soft:#fff0f4;
     --geo-line:#ffb9cd;
 
@@ -83,7 +88,7 @@
   a{color:inherit;}
   .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
   .prose{max-width:720px;}
-  table{border-collapse:collapse;width:100%;font-size:.95rem;}
+  table{border-collapse:collapse;width:100%;font-size:.95rem;color:inherit;}
   th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);}
   .table-scroll{width:100%;}
   .kiabi-table{width:100%;}
@@ -105,7 +110,7 @@
   .author-card p{margin:0 0 14px;font-size:.9rem;color:var(--ink-soft);max-width:62ch;}
   .author-card .linkedin{
     display:inline-flex;align-items:center;gap:7px;font-size:.84rem;font-weight:600;
-    color:var(--blue);text-decoration:none;
+    color:var(--blue-link);text-decoration:none;
   }
   .author-card .linkedin svg{width:17px;height:17px;fill:currentColor;}
   .author-card .linkedin:hover{text-decoration:underline;}
@@ -235,7 +240,7 @@
   .toc .eyebrow{font-family:'IBM Plex Mono';font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin-bottom:10px;}
   .toc ol{margin:0;padding-left:1.2em;columns:2;column-gap:28px;font-size:.9rem;}
   .toc li{margin-bottom:6px;break-inside:avoid;}
-  .toc a{text-decoration:none;color:var(--blue);}
+  .toc a{text-decoration:none;color:var(--blue-link);}
   .toc a:hover{text-decoration:underline;}
 
   main.article{max-width:1180px;margin:0 auto;padding:56px 24px 0;}
@@ -255,19 +260,19 @@
 
   .section-head h2{font-size:1.7rem;}
   .section-head p{color:var(--ink-soft);max-width:60ch;}
-  .block.navy .section-head p{color:#c9c8e8;}
+  .block.navy .section-head p{color:var(--ink-on-dark);}
 
   .kiabi-table th{
     font-family:'IBM Plex Mono';font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;
     color:var(--ink-soft);font-weight:600;background:var(--paper);
   }
-  .block.navy .kiabi-table th{background:rgba(255,255,255,.08);color:#c9c8e8;}
+  .block.navy .kiabi-table th{background:rgba(255,255,255,.08);color:var(--ink-on-dark);}
   .block.navy .kiabi-table td, .block.navy .kiabi-table th{border-color:rgba(255,255,255,.15);}
   .kiabi-table tr:hover td{background:rgba(0,110,251,.05);}
 
   .pill-tag{
     display:inline-block;font-size:.72rem;font-weight:600;padding:2px 9px;border-radius:999px;
-    background:rgba(0,110,251,.1);color:var(--blue);
+    background:rgba(0,110,251,.1);color:var(--blue-link);
   }
 
   .faq-item{border-bottom:1px solid var(--line);}
@@ -284,7 +289,7 @@
     background:var(--navy);color:#fff;border-radius:var(--radius-l);padding:32px 34px;
   }
   .tech-card ul{padding-left:1.2em;margin:14px 0;}
-  .tech-card li{margin-bottom:6px;color:#c9c8e8;}
+  .tech-card li{margin-bottom:6px;color:var(--ink-on-dark);}
   .tech-card details{margin-top:16px;background:rgba(255,255,255,.06);border-radius:var(--radius-s);padding:14px 18px;}
   .tech-card summary{cursor:pointer;font-weight:600;font-size:.88rem;}
   .tech-card pre{
@@ -299,23 +304,23 @@
   .guide-card .body{padding:16px;}
   .guide-card h3{font-size:.95rem;margin-bottom:6px;}
   .guide-card p{font-size:.82rem;color:var(--ink-soft);margin:0 0 10px;}
-  .guide-card a{font-size:.8rem;font-weight:600;color:var(--blue);text-decoration:none;}
+  .guide-card a{font-size:.8rem;font-weight:600;color:var(--blue-link);text-decoration:none;}
 
   .reviews{background:var(--paper);padding:52px 0;margin-top:56px;}
   .reviews-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
   @media (max-width:900px){.reviews-grid{grid-template-columns:repeat(2,1fr);}}
   .review-card h4{font-size:.85rem;margin-bottom:8px;}
   .review-card p{font-size:.82rem;color:var(--ink-soft);font-style:italic;}
-  .review-card time{font-size:.72rem;color:#9a98b5;}
+  .review-card time{font-size:.72rem;color:var(--ink-soft);}
 
-  footer.kiabi-footer{background:var(--navy);color:#c9c8e8;padding:48px 0 30px;font-size:.84rem;margin-top:0;}
+  footer.kiabi-footer{background:var(--navy);color:var(--ink-on-dark);padding:48px 0 30px;font-size:.84rem;margin-top:0;}
   .footer-cols{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;margin-bottom:34px;}
   @media (max-width:900px){.footer-cols{grid-template-columns:repeat(2,1fr);}}
   .footer-cols h5{color:#fff;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px;}
   .footer-cols ul{list-style:none;padding:0;margin:0;display:grid;gap:8px;}
-  .footer-cols a{text-decoration:none;color:#c9c8e8;}
+  .footer-cols a{text-decoration:none;color:var(--ink-on-dark);}
   .footer-cols a:hover{color:#fff;}
-  .footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:20px;font-size:.76rem;color:#9a98b5;}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:20px;font-size:.76rem;color:#b1b0c1;}
 
   /* ---------- GEO annotation system ---------- */
   .geo-mark, .geo-echo{position:relative;}
@@ -699,7 +704,7 @@
           <strong>Alt text descriptifs</strong>
           <p>Sur la page source, plusieurs images de contenu avaient un <code>alt=""</code> vide. Un texte alternatif descriptif (comme sur les images de cette maquette) donne du contexte aux modèles multimodaux qui ne peuvent pas "voir" l'image autrement.</p>
         </div>
-        <div class="eyebrow" style="font-family:'IBM Plex Mono';font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--geo);font-weight:600;margin-bottom:10px;">Ce qui change aussi dans le code</div>
+        <div class="eyebrow" style="font-family:'IBM Plex Mono';font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--geo-line);font-weight:600;margin-bottom:10px;">Ce qui change aussi dans le code</div>
         <h2 style="font-size:1.3rem;color:#fff;">Modifications invisibles à l'écran</h2>
         <ul>
           <li>Balise <code>&lt;link rel="canonical"&gt;</code> ajoutée (absente sur la page source)</li>
@@ -797,7 +802,7 @@
           <time>26/02/2025</time>
         </div>
       </div>
-      <p style="text-align:center;font-size:.72rem;color:#9a98b5;margin-top:20px;">* Source : questionnaire post-achat</p>
+      <p style="text-align:center;font-size:.72rem;color:var(--ink-soft);margin-top:20px;">* Source : questionnaire post-achat</p>
     </div>
   </section>
 
@@ -847,7 +852,7 @@
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">© Kiabi — maquette de démonstration datashake, non affiliée à Kiabi. <a href="./t-shirt-femme.html" style="color:#c9c8e8;">Voir aussi la maquette « T-shirt femme, top »</a>.</div>
+    <div class="footer-bottom">© Kiabi — maquette de démonstration datashake, non affiliée à Kiabi. <a href="./t-shirt-femme.html" style="color:var(--ink-on-dark);">Voir aussi la maquette « T-shirt femme, top »</a>.</div>
   </div>
 </footer>
 
