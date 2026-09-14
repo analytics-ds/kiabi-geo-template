@@ -246,7 +246,7 @@
   main.article{max-width:1180px;margin:0 auto;padding:56px 24px 0;}
 
   .block{padding:56px 0;}
-  .block.navy{background:var(--navy);color:var(--white);margin:0 -9999px;padding:56px 9999px;}
+  .block.navy{background:var(--navy);color:var(--white);width:100vw;margin-left:calc(50% - 50vw);padding:56px 0;}
   .block.navy a.cta, .block-white a.cta{
     display:inline-flex;align-items:center;gap:6px;
     background:var(--navy);color:var(--white);
@@ -281,7 +281,7 @@
     display:flex;justify-content:space-between;align-items:center;gap:16px;
   }
   .faq-item summary::-webkit-details-marker{display:none;}
-  .faq-item summary::after{content:'+';font-size:1.3rem;font-weight:400;color:var(--geo-dark);flex:none;transition:transform .2s;}
+  .faq-item summary::after{content:'+';font-size:1.3rem;font-weight:400;color:currentColor;flex:none;transition:transform .2s;}
   .faq-item[open] summary::after{transform:rotate(45deg);}
   .faq-item p{margin:0 0 18px;color:var(--ink-soft);max-width:65ch;}
 
@@ -412,6 +412,11 @@
   .hero{padding-top:180px;}
   .k-header.is-reduced .k-cats{display:none;}
   @media (max-width:900px){.hero{padding-top:150px;}}
+
+  /* les blocs pleine largeur débordent volontairement (fond edge-to-edge) :
+     clip, et non hidden, pour ne pas créer de scroll horizontal fantôme
+     tout en préservant le header collant */
+  html, body{overflow-x:clip;}
 </style>
 
 <header class="k-header is-transparent" id="k-header">

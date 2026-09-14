@@ -447,7 +447,7 @@
 
   main.plp{max-width:1180px;margin:0 auto;padding:0 24px;}
   .block{padding:56px 0;}
-  .block.navy{background:var(--navy);color:var(--white);margin:56px -9999px 0;padding:56px 9999px;}
+  .block.navy{background:var(--navy);color:var(--white);width:100vw;margin:56px 0 0 calc(50% - 50vw);padding:56px max(24px, calc(50vw - 566px));}
   .section-head h2{font-size:1.6rem;}
   .section-head p{color:var(--ink-soft);max-width:60ch;}
   .block.navy .section-head p{color:var(--ink-on-dark);}
@@ -462,7 +462,7 @@
     position:relative;background:var(--paper);border-radius:var(--radius-m);
     aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
   }
-  .guide-image svg{width:30%;opacity:.5;}
+  .guide-image img{width:100%;height:100%;object-fit:cover;display:block;}
   .guide-image .ph-tag{position:absolute;top:10px;left:10px;font-size:.6rem;font-family:'IBM Plex Mono';background:var(--white);color:var(--ink-soft);padding:2px 8px;border-radius:999px;letter-spacing:.03em;}
   .guide-image p{font-size:.76rem;color:var(--ink-soft);margin:0;text-align:center;padding:0 16px;}
 
@@ -472,7 +472,7 @@
     display:flex;justify-content:space-between;align-items:center;gap:16px;
   }
   .faq-item summary::-webkit-details-marker{display:none;}
-  .faq-item summary::after{content:'+';font-size:1.3rem;font-weight:400;color:var(--yellow);flex:none;transition:transform .2s;}
+  .faq-item summary::after{content:'+';font-size:1.3rem;font-weight:400;color:currentColor;flex:none;transition:transform .2s;}
   .faq-item[open] summary::after{transform:rotate(45deg);}
   .faq-item p{margin:0 0 18px;color:var(--ink-on-dark);max-width:65ch;}
 
@@ -602,6 +602,21 @@
   }
   /* la pastille 1 ne doit pas passer sous le header collant */
   .plp-head .breadcrumb .geo-badge{top:2px;}
+
+  /* annotations sur les petits blocs des cartes produit : cadre resserré,
+     pastille centrée, pour ne pas mordre sur le texte voisin */
+  .product-card .geo-mark::before, .product-card .geo-echo::before{inset:-5px;border-radius:var(--radius-s);}
+  .product-card .geo-badge{width:26px;height:26px;font-size:.7rem;top:50%;right:-13px;transform:translateY(-50%);}
+  .product-card .geo-badge:hover, .product-card .geo-badge:focus-visible,
+  .product-card .geo-badge[aria-expanded="true"]{transform:translateY(-50%) scale(1.18);}
+  .product-card .p-highlights{margin-top:7px;}
+  .product-card .p-related{margin-top:9px;}
+  .product-card .geo-tooltip{top:28px;}
+
+  /* les blocs pleine largeur débordent volontairement (fond edge-to-edge) :
+     clip, et non hidden, pour ne pas créer de scroll horizontal fantôme
+     tout en préservant le header collant */
+  html, body{overflow-x:clip;}
 </style>
 </head>
 <body>
@@ -881,9 +896,7 @@
       </table>
     </div>
     <div class="guide-image">
-      <span class="ph-tag">aperçu</span>
-      <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"><path d="M50,10 L37,10 L20,24 L29,36 L37,29 L37,90 L63,90 L63,29 L71,36 L80,24 L63,10 Z"/></svg>
-      <p>Visuel à intégrer (ex. zoom matière ou coupe)</p>
+      <img src="images/tee-shirt-manches-longues-en-rib-beige-gjm32_11_hd1.webp" alt="Tee-shirt femme manches longues en maille côtelée beige, coupe ajustée, porté avec un pantalon fluide" loading="lazy">
     </div>
   </div>
 </section>
